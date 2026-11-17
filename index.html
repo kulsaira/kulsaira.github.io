@@ -1,29 +1,359 @@
- 
-html
-  
+index.html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kulsaira - Personal Statement</title>
-    <style>
-        body{font-family:Arial,sans-serif;max-width:800px;margin:30px auto;padding:0 20px;color:#333;line-height:1.7}
-        h1{color:#2c4d75;border-bottom:2px solid #4472b2;padding-bottom:10px}
-        h2{color:#4472b2;margin-top:30px}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Гүлсайра · 个人主页 | 中亚法务与合规职业规划</title>
+<style>
+  :root{
+    --deep:#0e3a3a; --teal:#147d7d; --gold:#c9a227; --cream:#faf6ee;
+    --ink:#1f2a2a; --muted:#5f6f6f; --card:#ffffff; --line:#e6e0d2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    color:var(--ink);background:var(--cream);line-height:1.75;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ===== 导航 ===== */
+  nav{position:sticky;top:0;z-index:50;background:rgba(14,58,58,.96);
+    backdrop-filter:blur(6px);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;
+    height:60px;}
+  .logo{color:#fff;font-weight:700;letter-spacing:1px;font-size:18px;}
+  .logo span{color:var(--gold);}
+  nav ul{display:flex;gap:28px;list-style:none;}
+  nav a{color:#dfeaea;text-decoration:none;font-size:14.5px;transition:.2s;}
+  nav a:hover{color:var(--gold);}
+  @media(max-width:720px){nav ul{gap:14px;}nav a{font-size:13px;}}
+
+  /* ===== 首屏 ===== */
+  header{position:relative;color:#fff;padding:110px 0 90px;
+    background:linear-gradient(135deg,var(--deep) 0%,var(--teal) 100%);
+    overflow:hidden;}
+  header::after{content:"";position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;border-radius:50%;
+    border:60px solid rgba(201,162,39,.14);}
+  header::before{content:"";position:absolute;left:-90px;bottom:-140px;
+    width:320px;height:320px;border-radius:50%;
+    border:45px solid rgba(255,255,255,.07);}
+  .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);
+    padding:5px 16px;border-radius:99px;font-size:13px;letter-spacing:2px;
+    margin-bottom:22px;}
+  h1{font-size:clamp(38px,6vw,62px);font-weight:800;line-height:1.2;
+    letter-spacing:1px;}
+  h1 em{font-style:normal;color:var(--gold);}
+  .hero-sub{margin-top:16px;font-size:clamp(15px,2.4vw,19px);
+    color:#cfe4e4;max-width:640px;}
+  .hero-langs{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;}
+  .hero-langs span{background:rgba(255,255,255,.12);padding:6px 16px;
+    border-radius:8px;font-size:14px;}
+  .scroll-hint{margin-top:44px;color:#9fc4c4;font-size:13px;letter-spacing:3px;}
+
+  section{padding:76px 0;}
+  .sec-head{text-align:center;margin-bottom:48px;}
+  .sec-kicker{color:var(--teal);font-size:13px;letter-spacing:4px;
+    text-transform:uppercase;font-weight:700;}
+  .sec-head h2{font-size:clamp(26px,4vw,36px);margin-top:8px;}
+  .sec-head p{color:var(--muted);margin-top:10px;max-width:680px;
+    margin-left:auto;margin-right:auto;}
+
+  /* ===== 关于我 ===== */
+  .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;
+    align-items:stretch;}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;}}
+  .panel{background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:32px;box-shadow:0 6px 24px rgba(14,58,58,.06);}
+  .panel h3{color:var(--deep);font-size:19px;margin-bottom:16px;
+    padding-bottom:12px;border-bottom:2px solid var(--gold);
+    display:inline-block;}
+  .panel ul{list-style:none;}
+  .panel ul li{padding:9px 0 9px 26px;position:relative;color:#3a4a4a;}
+  .panel ul li::before{content:"◆";color:var(--gold);position:absolute;
+    left:0;font-size:11px;top:15px;}
+  .lang-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+  .lang-badges b{background:#eef6f4;color:var(--teal);border:1px solid #cfe4df;
+    padding:7px 16px;border-radius:99px;font-size:14.5px;}
+  .fact{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);}
+  .fact:last-child{border-bottom:none;}
+  .fact .ic{width:42px;height:42px;flex:none;border-radius:10px;
+    background:#f3ecd9;display:flex;align-items:center;justify-content:center;
+    font-size:20px;}
+  .fact b{display:block;color:var(--deep);font-size:15px;}
+  .fact small{color:var(--muted);}
+
+  /* ===== 三岗卡片 ===== */
+  .jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:900px){.jobs{grid-template-columns:1fr;}}
+  .job{background:var(--card);border-radius:18px;overflow:hidden;
+    border:1px solid var(--line);box-shadow:0 8px 26px rgba(14,58,58,.07);
+    display:flex;flex-direction:column;transition:.25s;}
+  .job:hover{transform:translateY(-6px);
+    box-shadow:0 16px 36px rgba(14,58,58,.13);}
+  .job-flag{padding:24px 26px;color:#fff;position:relative;}
+  .jf-cn{background:linear-gradient(135deg,#a52a2a,#c0392b);}
+  .jf-kz{background:linear-gradient(135deg,#0e6f6f,#149a8b);}
+  .jf-kg{background:linear-gradient(135deg,#b9862c,#d4a53f);}
+  .job-flag .country{font-size:13px;letter-spacing:3px;opacity:.85;}
+  .job-flag h3{font-size:20px;margin-top:4px;line-height:1.4;}
+  .job-body{padding:24px 26px;flex:1;}
+  .job-body p{font-size:14.5px;color:#3a4a4a;margin-bottom:12px;}
+  .job-body .lbl{font-size:12.5px;font-weight:700;color:var(--teal);
+    letter-spacing:2px;margin:14px 0 6px;}
+  .job-body ul{list-style:none;}
+  .job-body ul li{font-size:14px;color:#465656;padding:4px 0 4px 18px;
+    position:relative;}
+  .job-body ul li::before{content:"▸";color:var(--gold);position:absolute;
+    left:0;}
+  .job-foot{padding:16px 26px;background:#f7f4ec;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted);}
+  .job-foot b{color:var(--deep);}
+
+  /* ===== 差距与路线 ===== */
+  .roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media(max-width:900px){.roadmap{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:540px){.roadmap{grid-template-columns:1fr;}}
+  .step{background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:24px;position:relative;}
+  .step .num{width:38px;height:38px;border-radius:50%;
+    background:var(--deep);color:var(--gold);font-weight:800;
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .step h4{color:var(--deep);font-size:16px;margin-bottom:8px;}
+  .step p{font-size:13.8px;color:var(--muted);}
+  .step .dur{display:inline-block;margin-top:12px;font-size:12.5px;
+    color:var(--teal);background:#eef6f4;padding:3px 12px;border-radius:99px;}
+
+  .note-box{margin-top:40px;background:#fdf8ec;border-left:4px solid var(--gold);
+    border-radius:0 12px 12px 0;padding:22px 26px;font-size:15px;color:#5a4a1e;}
+
+  /* ===== 优势 ===== */
+  .adv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:820px){.adv{grid-template-columns:1fr;}}
+  .adv-card{background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:26px;text-align:center;}
+  .adv-card .em{font-size:34px;margin-bottom:10px;}
+  .adv-card h4{color:var(--deep);margin-bottom:8px;}
+  .adv-card p{font-size:14px;color:var(--muted);}
+
+  footer{background:var(--deep);color:#9fc4c4;text-align:center;
+    padding:36px 0;font-size:13.5px;}
+  footer b{color:var(--gold);}
+</style>
+<base target="_blank">
 </head>
 <body>
-    <h1>Gülsaira (Kulsaira)</h1>
-    <h2>About my study</h2>
-    <p>After entering this university, I have systematically studied the legal system of Kazakhstan. I have gradually learned to understand legal institutions from different perspectives and think about the relationship between law and real society, and I have gained a lot.</p >
-    <h2>1. Criminal policy vs. criminal law</h2>
-    <p>Criminal policy is the broader strategy for preventing and responding to crime (prevention, enforcement, sentencing, rehabilitation). Criminal law is the legal tool that defines offences and penalties.</p >
-    <h2>2. Is criminalisation always effective?</h2>
-    <p>No. Criminal law should be a last resort. Over-criminalisation can overload courts and prisons and ignore root causes like poverty or addiction. Administrative, civil or social measures are sometimes better.</p >
-    <h2>3. Financial legal norms</h2>
-    <p>Financial legal norms are the state's rules for how public money is raised, distributed, and used. They are mostly imperative: the state is the dominant party, and violations bring monetary sanctions that the state can often impose without going to court. Each norm has a hypothesis, a disposition, and a sanction. The Constitution is the top source of financial law, and below it come the Tax Code, other laws, decrees, government resolutions, and local acts.</p >
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Гүлсайра <span>·</span> 个人主页</div>
+    <ul>
+      <li><a href=" ">关于我</a ></li>
+      <li><a href="#advantages">核心优势</a ></li>
+      <li><a href="#jobs">目标岗位</a ></li>
+      <li><a href="#roadmap">成长路线</a ></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="hero-tag">中亚 · 法务 · 合规 · 一带一路</div>
+    <h1>你好，我是 <em>Гүлсайра</em></h1>
+    <p class="hero-sub">来自中国新疆 · 机械设计制造及其自动化本科 · 一年制研究生在读<br>
+    目标是成为「懂技术、懂语言」的中亚涉外法务与合规人才</p >
+    <div class="hero-langs">
+      <span>🇨🇳 汉语</span><span>🇰🇿 哈萨克语</span><span>🕌 维吾尔语</span><span>🇬🇧 英语（基础）</span><span>📘 俄语（学习中）</span>
+    </div>
+    <div class="scroll-hint">↓ 向下滚动了解更多</div>
+  </div>
+</header>
+
+<!-- ========== 第一方面：自我介绍 ========== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Part 01 · About Me</div>
+      <h2>关于我</h2>
+      <p>机械工程背景 + 三语能力，让我在中亚法律与合规领域拥有独一无二的组合优势。</p >
+    </div>
+    <div class="about-grid">
+      <div class="panel">
+        <h3>基本情况</h3>
+        <div class="fact"><div class="ic">👤</div>
+          <div><b>姓名：Гүлсайра（古丽赛拉）</b><small>来自中国新疆</small></div></div>
+        <div class="fact"><div class="ic">🎓</div>
+          <div><b>本科：机械设计制造及其自动化</b>
+          <small>系统学习了该专业全部课程</small></div></div>
+        <div class="fact"><div class="ic">📖</div>
+          <div><b>当前状态：一年制研究生在读 · 法学（环境法方向）</b>
+          <small>环境法与矿业/能源项目环保合规岗位直接对口</small></div></div>
+        <div class="fact"><div class="ic">🏆</div>
+          <div><b>竞赛经历</b>
+          <small>糖果机械设备设计赛 · 电路焊接赛，均取得不错成绩</small></div></div>
+        <div class="fact"><div class="ic">🎵</div>
+          <div><b>爱好</b><small>听音乐 · 吃美食</small></div></div>
+        <div class="fact"><div class="ic">🗣️</div>
+          <div><b>语言优势</b>
+          <div class="lang-badges" style="margin-top:8px;">
+            <b>汉语</b><b>哈萨克语</b><b>维吾尔语</b><b>英语（基础）</b>
+          </div><small style="display:block;margin-top:6px;color:var(--muted);">俄语学习中</small></div></div>
+      </div>
+      <div class="panel">
+        <h3>我的核心竞争力</h3>
+        <ul>
+          <li><b>环境法专业对口：</b>研究生主修环境法，与目标岗位「环保合规专员」方向精准匹配。</li>
+          <li><b>机械 + 法律的稀缺组合：</b>能看懂设备采购、工程承包、技术合同中的技术条款——这是纯法律出身的人很难做到的。</li>
+          <li><b>三语沟通优势：</b>可直接对接中方总部与哈萨克斯坦当地政府、合作方。</li>
+          <li><b>语言覆盖全面：</b>中亚业务岗位主要使用汉语、哈语和俄语；同时具备英语基础，可借助工具处理英文文件。</li>
+          <li><b>市场需求真实存在：</b>中国企业在哈萨克斯坦的设备贸易、能源、基建项目众多，急需「懂技术、懂语言的法务」。</li>
+          <li><b>清晰的职业规划：</b>毕业后优先投中国总部的中亚业务岗位，先入职再外派，比直接去当地求职更现实。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 核心优势 ========== -->
+<section id="advantages" style="background:#f2ede1;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Strengths</div>
+      <h2>三大核心优势</h2>
+    </div>
+    <div class="adv">
+      <div class="adv-card"><div class="em">⚙️</div>
+        <h4>懂技术的法务</h4>
+        <p>机械本科背景，能审阅设备采购与工程合同的技术条款，横跨技术与法律两个领域。</p ></div>
+      <div class="adv-card"><div class="em">🌐</div>
+        <h4>多语人才</h4>
+        <p>汉语 + 哈萨克语 + 维吾尔语，另有英语基础、俄语学习中，能直接服务中亚业务一线沟通。</p ></div>
+      <div class="adv-card"><div class="em">🤝</div>
+        <h4>桥梁型人才</h4>
+        <p>环境法专业 + 三语能力，能同时对接中方总部、当地政府与合作方，是"一带一路"绿色项目最需要的人才类型。</p ></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 第二方面：三个国家的目标岗位 ========== -->
+<section id="jobs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Part 02 · Target Positions</div>
+      <h2>三个国家的目标岗位</h2>
+      <p>以中国为起点，面向哈萨克斯坦与吉尔吉斯斯坦，形成「中亚法务与合规」的完整职业版图。</p >
+    </div>
+    <div class="jobs">
+
+      <div class="job">
+        <div class="job-flag jf-cn">
+          <div class="country">🇨🇳 中国 CHINA</div>
+          <h3>涉外环境合规专员<br>（中亚 / 一带一路项目方向）</h3>
+        </div>
+        <div class="job-body">
+          <p>中资企业驻哈萨克斯坦（或中亚业务）的法务/合规专员，先入职中国总部，再外派中亚。</p >
+          <div class="lbl">岗位亮点</div>
+          <ul>
+            <li>直接对接中方总部与当地政府、合作方</li>
+            <li>机械背景可审阅设备、工程、技术合同</li>
+            <li>英语要求低，主要用汉语、哈语、俄语</li>
+          </ul>
+          <div class="lbl">其他备选方向</div>
+          <ul>
+            <li>涉外/中亚业务律所（需通过法考）</li>
+            <li>海关、商务、外贸相关公务员/事业单位岗位</li>
+          </ul>
+        </div>
+        <div class="job-foot">💬 工作语言：汉语为主 + 哈萨克语</div>
+      </div>
+
+      <div class="job">
+        <div class="job-flag jf-kz">
+          <div class="country">🇰🇿 哈萨克斯坦 KAZAKHSTAN</div>
+          <h3>项目法务专员<br>（环境与合规方向）</h3>
+        </div>
+        <div class="job-body">
+          <p>中资企业在哈项目的法务、合规、合同与商务岗位，服务设备贸易、能源、基建项目。</p >
+          <div class="lbl">岗位亮点</div>
+          <ul>
+            <li>哈国法律文件与商务沟通大量使用俄语</li>
+            <li>「懂技术 + 懂语言」的法务在当地非常稀缺</li>
+            <li>机械+法律组合在工程承包领域优势明显</li>
+          </ul>
+          <div class="lbl">其他备选方向</div>
+          <ul>
+            <li>合同管理岗（中资外派）</li>
+            <li>中哈贸易与投资项目的法律支持</li>
+          </ul>
+        </div>
+        <div class="job-foot">💬 工作语言：哈萨克语 + 俄语</div>
+      </div>
+
+      <div class="job">
+        <div class="job-flag jf-kg">
+          <div class="country">🇰🇬 吉尔吉斯斯坦 KYRGYZSTAN</div>
+          <h3>矿业 / 能源项目<br>环保合规专员</h3>
+        </div>
+        <div class="job-body">
+          <p>中资企业在吉尔吉斯斯坦外派的法务/合同管理岗，聚焦矿业与能源项目的环保合规——与我的环境法专业直接对口。</p >
+          <div class="lbl">岗位亮点</div>
+          <ul>
+            <li>矿业/能源是吉国中资项目集中领域</li>
+            <li>环境合规方向与一带一路绿色项目需求契合</li>
+            <li>项目法务（环境与合规方向）长期需求稳定</li>
+          </ul>
+          <div class="lbl">其他备选方向</div>
+          <ul>
+            <li>中吉工程承包项目法律支持</li>
+            <li>知识产权相关合同管理</li>
+          </ul>
+        </div>
+        <div class="job-foot">💬 工作语言：俄语 + 汉语</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ========== 差距分析与成长路线 ========== -->
+<section id="roadmap" style="background:#f2ede1;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Roadmap</div>
+      <h2>一年研究生期间的成长路线</h2>
+      <p>正就读一年制研究生（法学·环境法方向）：英语具备基础水平（目标 B1+）、法律实务经验不足、尚未通过法考、缺少实习经历——把这一年的学业期同时用作「补短板窗口期」，毕业即投递。</p >
+    </div>
+    <div class="roadmap">
+      <div class="step"><div class="num">1</div>
+        <h4>通过法考</h4>
+        <p>取得法律职业资格，是进入律所与法务岗位的基本门槛。</p >
+        <span class="dur">一年内重点</span></div>
+      <div class="step"><div class="num">2</div>
+        <h4>中亚业务实习</h4>
+        <p>积累法律实务与项目经验，弥补「无实习、无项目」的短板。</p >
+        <span class="dur">同步进行</span></div>
+      <div class="step"><div class="num">3</div>
+        <h4>俄语入门</h4>
+        <p>哈、吉两国法律文件与商务沟通大量使用俄语，不会俄语会明显受限。</p >
+        <span class="dur">每天 1 小时 · 1~2 年</span></div>
+      <div class="step"><div class="num">4</div>
+        <h4>英语从基础提升至 B1+</h4>
+        <p>已有基础水平，目标 B1 约需 1~1.5 年稳定学习，再花 2~3 年从 B1 稳步迈向 B2，日常可借助翻译器。</p >
+        <span class="dur">每天 1~2 小时</span></div>
+    </div>
+    <div class="note-box">
+      📌 <b>求职策略：</b>一年制研究生毕业前后即可优先投递中国总部的中亚业务岗位，
+      先入职、再外派哈萨克斯坦——这条路径比直接去当地找工作更现实。
+      英语要求：中资企业及中亚业务岗位需能看懂文件并沟通，目标 B1 及以上。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Гүлсайра</b> · 中国新疆 · 机械本科 · 法学（环境法）研究生在读 · 中亚法务与合规方向<br>
+    汉语 · 哈萨克语 · 维吾尔语 · 英语（基础） | 俄语学习中 | 🎵 听音乐 · 吃美食
+  </div>
+</footer>
+
 </body>
 </html>
- 
- 
