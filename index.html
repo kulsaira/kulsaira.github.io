@@ -1,337 +1,316 @@
 <!DOCTYPE html>
  <html lang="en">
  <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Gülsaira(гүлсайра) · Personal Portfolio | Central‑Asia Legal & Compliance Career Plan</title>
- <style>
-   :root{
-     --deep:#0e3a3a; --teal:#147d7d; --gold:#c9a227; --cream:#faf6ee;
-     --ink:#1f2a2a; --muted:#5f6f6f; --card:#ffffff; --line:#e6e0d2;
-   }
-   *{margin:0;padding:0;box-sizing:border-box;}
-   html{scroll-behavior:smooth;}
-   body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
-     color:var(--ink);background:var(--cream);line-height:1.75;}
-   .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-   /* ===== Navigation ===== */
-   nav{position:sticky;top:0;z-index:50;background:rgba(14,58,58,.96);
-     backdrop-filter:blur(6px);}
-   nav .wrap{display:flex;align-items:center;justify-content:space-between;
-     height:60px;}
-   .logo{color:#fff;font-weight:700;letter-spacing:1px;font-size:18px;}
-   .logo span{color:var(--gold);}
-   nav ul{display:flex;gap:28px;list-style:none;}
-   nav a{color:#dfeaea;text-decoration:none;font-size:14.5px;transition:.2s;}
-   nav a:hover{color:var(--gold);}
-   @media(max-width:720px){nav ul{gap:14px;}nav a{font-size:13px;}}
-   /* ===== Hero Section ===== */
-   header{position:relative;color:#fff;padding:110px 0 90px;
-     background:linear-gradient(135deg,var(--deep) 0%,var(--teal) 100%);
-     overflow:hidden;}
-   header::after{content:"";position:absolute;right:-120px;top:-120px;
-     width:420px;height:420px;border-radius:50%;
-     border:60px solid rgba(201,162,39,.14);}
-   header::before{content:"";position:absolute;left:-90px;bottom:-140px;
-     width:320px;height:320px;border-radius:50%;
-     border:45px solid rgba(255,255,255,.07);}
-   .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);
-     padding:5px 16px;border-radius:99px;font-size:13px;letter-spacing:2px;
-     margin-bottom:22px;}
-   h1{font-size:clamp(38px,6vw,62px);font-weight:800;line-height:1.2;
-     letter-spacing:1px;}
-   h1 em{font-style:normal;color:var(--gold);}
-   .hero-sub{margin-top:16px;font-size:clamp(15px,2.4vw,19px);
-     color:#cfe4e4;max-width:640px;}
-   .hero-langs{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;}
-   .hero-langs span{background:rgba(255,255,255,.12);padding:6px 16px;
-     border-radius:8px;font-size:14px;}
-   .scroll-hint{margin-top:44px;color:#9fc4c4;font-size:13px;letter-spacing:3px;}
-   section{padding:76px 0;}
-   .sec-head{text-align:center;margin-bottom:48px;}
-   .sec-kicker{color:var(--teal);font-size:13px;letter-spacing:4px;
-     text-transform:uppercase;font-weight:700;}
-   .sec-head h2{font-size:clamp(26px,4vw,36px);margin-top:8px;}
-   .sec-head p{color:var(--muted);margin-top:10px;max-width:680px;
-     margin-left:auto;margin-right:auto;}
-   /* ===== About Me ===== */
-   .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;
-     align-items:stretch;}
-   @media(max-width:820px){.about-grid{grid-template-columns:1fr;}}
-   .panel{background:var(--card);border:1px solid var(--line);
-     border-radius:16px;padding:32px;box-shadow:0 6px 24px rgba(14,58,58,.06);}
-   .panel h3{color:var(--deep);font-size:19px;margin-bottom:16px;
-     padding-bottom:12px;border-bottom:2px solid var(--gold);
-     display:inline-block;}
-   .panel ul{list-style:none;}
-   .panel ul li{padding:9px 0 9px 26px;position:relative;color:#3a4a4a;}
-   .panel ul li::before{content:"◆";color:var(--gold);position:absolute;
-     left:0;font-size:11px;top:15px;}
-   .lang-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
-   .lang-badges b{background:#eef6f4;color:var(--teal);border:1px solid #cfe4df;
-     padding:7px 16px;border-radius:99px;font-size:14.5px;}
-   .fact{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);}
-   .fact:last-child{border-bottom:none;}
-   .fact .ic{width:42px;height:42px;flex:none;border-radius:10px;
-     background:#f3ecd9;display:flex;align-items:center;justify-content:center;
-     font-size:20px;}
-   .fact b{display:block;color:var(--deep);font-size:15px;}
-   .fact small{color:var(--muted);}
-   /* ===== Target Jobs ===== */
-   .jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-   @media(max-width:900px){.jobs{grid-template-columns:1fr;}}
-   .job{background:var(--card);border-radius:18px;overflow:hidden;
-     border:1px solid var(--line);box-shadow:0 8px 26px rgba(14,58,58,.07);
-     display:flex;flex-direction:column;transition:.25s;}
-   .job:hover{transform:translateY(-6px);
-     box-shadow:0 16px 36px rgba(14,58,58,.13);}
-   .job-flag{padding:24px 26px;color:#fff;position:relative;}
-   .jf-cn{background:linear-gradient(135deg,#a52a2a,#c0392b);}
-   .jf-kz{background:linear-gradient(135deg,#0e6f6f,#149a8b);}
-   .jf-kg{background:linear-gradient(135deg,#b9862c,#d4a53f);}
-   .job-flag .country{font-size:13px;letter-spacing:3px;opacity:.85;}
-   .job-flag h3{font-size:20px;margin-top:4px;line-height:1.4;}
-   .job-body{padding:24px 26px;flex:1;}
-   .job-body p{font-size:14.5px;color:#3a4a4a;margin-bottom:12px;}
-   .job-body .lbl{font-size:12.5px;font-weight:700;color:var(--teal);
-     letter-spacing:2px;margin:14px 0 6px;}
-   .job-body ul{list-style:none;}
-   .job-body ul li{font-size:14px;color:#465656;padding:4px 0 4px 18px;
-     position:relative;}
-   .job-body ul li::before{content:"▸";color:var(--gold);position:absolute;
-     left:0;}
-   .job-foot{padding:16px 26px;background:#f7f4ec;border-top:1px solid var(--line);
-     font-size:13px;color:var(--muted);}
-   .job-foot b{color:var(--deep);}
-   /* ===== Roadmap ===== */
-   .roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-   @media(max-width:900px){.roadmap{grid-template-columns:repeat(2,1fr);}}
-   @media(max-width:540px){.roadmap{grid-template-columns:1fr;}}
-   .step{background:var(--card);border:1px solid var(--line);
-     border-radius:14px;padding:24px;position:relative;}
-   .step .num{width:38px;height:38px;border-radius:50%;
-     background:var(--deep);color:var(--gold);font-weight:800;
-     display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-   .step h4{color:var(--deep);font-size:16px;margin-bottom:8px;}
-   .step p{font-size:13.8px;color:var(--muted);}
-   .step .dur{display:inline-block;margin-top:12px;font-size:12.5px;
-     color:var(--teal);background:#eef6f4;padding:3px 12px;border-radius:99px;}
-   .note-box{margin-top:40px;background:#fdf8ec;border-left:4px solid var(--gold);
-     border-radius:0 12px 12px 0;padding:22px 26px;font-size:15px;color:#5a4a1e;}
-   /* ===== Advantages ===== */
-   .adv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-   @media(max-width:820px){.adv{grid-template-columns:1fr;}}
-   .adv-card{background:var(--card);border:1px solid var(--line);
-     border-radius:14px;padding:26px;text-align:center;}
-   .adv-card .em{font-size:34px;margin-bottom:10px;}
-   .adv-card h4{color:var(--deep);margin-bottom:8px;}
-   .adv-card p{font-size:14px;color:var(--muted);}
-   footer{background:var(--deep);color:#9fc4c4;text-align:center;
-     padding:36px 0;font-size:13.5px;}
-   footer b{color:var(--gold);}
- </style>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gülsaira | Central Asia Legal & Compliance Portfolio</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             max-width: 1100px;
+             margin: 0 auto;
+             padding: 25px;
+             line-height: 1.7;
+             color: #222;
+             background-color: #ffffff;
+         }
+         img {
+             max-width: 100%;
+         }
+         .card-container{
+             display:flex;
+             flex-wrap:wrap;
+             gap:24px;
+             justify-content:center;
+             margin:20px 0;
+         }
+         .job-card{
+             box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+             border-radius:16px;
+             padding:20px;
+             width:320px;
+         }
+         .progress-wrap{
+             margin:12px 0;
+         }
+         .progress-label{
+             display:flex;
+             justify-content:space-between;
+             margin-bottom:4px;
+             font-size:14px;
+         }
+      .progress-bg{
+             width:100%;
+             height:10px;
+             background:#e9ecef;
+             border-radius:5px;
+             overflow:hidden;
+         }
+         .progress-bar{
+             height:100%;
+             border-radius:5px;
+         }
+         h1 {
+             text-align: center;
+             color: #1f2e40;
+         }
+         h2 {
+             color: #2c3e50;
+             border-bottom: 2px solid #e6e6e6;
+             padding-bottom: 6px;
+             margin-top:40px;
+         }
+         h3 {
+             color: #34495e;
+             margin-top:25px;
+         }
+         details {
+             background:#f8f9fa;
+             padding:18px;
+             border-radius:10px;
+             margin:30px 0;
+         }
+     </style>
  </head>
  <body>
- <nav>
-   <div class="wrap">
-     <div class="logo">Gülsaira（гүлсайра） <span>·</span> Portfolio</div>
-     <ul>
-       <li><a href=" ">About Me</a ></li>
-       <li><a href="#advantages">Core Strengths</a ></li>
-       <li><a href="#jobs">Target Roles</a ></li>
-       <li><a href="#roadmap">Development Roadmap</a ></li>
-     </ul>
-   </div>
- </nav>
- <header>
-   <div class="wrap">
-     <div class="hero-tag">Central Asia · Legal · Compliance · Belt & Road</div>
-     <h1>Hello, I'm <em>Gülsairа(Гүлсайра) </em></h1>
-     <p class="hero-sub">From Xinjiang, China. Bachelor’s in Mechanical Design & Manufacturing Automation.<br>
-     One‑year postgraduate law student. Aspiring to be a tech‑savvy multilingual legal & compliance specialist for Central‑Asia projects.</p >
-     <div class="hero-langs">
-       <span>🇨🇳 Chinese</span><span>🇰🇿 Kazakh</span><span>🕌 Uyghur</span><span>🇬🇧 English (basic)</span><span>📘 Russian (in progress)</span>
-     </div>
-     <div class="scroll-hint">↓ Scroll down to learn more</div>
-   </div>
- </header>
- <!-- ========== About Me ========== -->
- <section id="about">
-   <div class="wrap">
-     <div class="sec-head">
-       <div class="sec-kicker">Part 01 · About Me</div>
-       <h2>About Me</h2>
-       <p>My mechanical‑engineering background plus multilingual skills create a unique competitive edge for legal‑compliance work across Central‑Asia markets.</p >
-     </div>
-     <div class="about-grid">
-       <div class="panel">
-         <h3>Basic Profile</h3>
-         <div class="fact"><div class="ic">👤</div>
-           <div><b>Name: Gülsaira</b><small>From Xinjiang, China</small></div></div>
-         <div class="fact"><div class="ic">🎓</div>
-           <div><b>Bachelor: Mechanical Design & Manufacturing Automation</b>
-           <small>Completed full curriculum of mechanical‑engineering courses</small></div></div>
-         <div class="fact"><div class="ic">📖</div>
-           <div><b>Current status: One‑year postgraduate student, Law (Environmental Law track)</b>
-           <small>Well‑matched for environmental‑compliance roles in mining & energy projects</small></div></div>
-         <div class="fact"><div class="ic">🏆</div>
-           <div><b>Competitions</b>
-           <small>Confectionery‑machinery design contest & circuit‑welding contest, awarded good results</small></div></div>
-         <div class="fact"><div class="ic">🎵</div>
-           <div><b>Hobbies</b><small>Music & food</small></div></div>
-         <div class="fact"><div class="ic">🗣️</div>
-           <div><b>Language skills</b>
-           <div class="lang-badges" style="margin-top:8px;">
-             <b>Chinese</b><b>Kazakh</b><b>Uyghur</b><b>English (basic)</b>
-           </div><small style="display:block;margin-top:6px;color:var(--muted);">Russian learning in progress</small></div></div>
-       </div>
-       <div class="panel">
-         <h3>Core Competencies</h3>
-         <ul>
-           <li><b>Specialized in Environmental Law:</b> Postgraduate focus on environmental law directly fits environmental‑compliance positions.</li>
-           <li><b>Rare mechanical‑law dual background:</b> Able to understand technical clauses in equipment procurement and engineering contracts — an advantage pure‑law graduates rarely have.</li>
-           <li><b>Multilingual communication:</b> Can liaise between Chinese headquarters and local governments & partners in Central Asia.</li>
-           <li><b>Broad language coverage:</b> Central‑Asia business mainly uses Chinese, Kazakh and Russian; basic English for document‑assistance.</li>
-           <li><b>Real‑market demand:</b> Many Chinese‑funded projects (equipment trade, energy, infrastructure) in Kazakhstan need tech‑aware multilingual legal staff.</li>
-           <li><b>Clear career strategy:</b> Prefer applying for China‑based Central‑Asia‑focused roles first, then consider overseas secondment rather than seeking local jobs directly abroad.</li>
-         </ul>
-       </div>
-     </div>
-   </div>
- </section>
- <!-- ========== Core Strengths ========== -->
- <section id="advantages" style="background:#f2ede1;">
-   <div class="wrap">
-     <div class="sec-head">
-       <div class="sec-kicker">Strengths</div>
-       <h2>Three Key Advantages</h2>
-     </div>
-     <div class="adv">
-       <div class="adv-card"><div class="em">⚙️</div>
-         <h4>Tech‑minded legal talent</h4>
-         <p>Mechanical‑engineering education enables review of technical terms within procurement & engineering contracts, bridging technology and law.</p ></div>
-       <div class="adv-card"><div class="em">🌐</div>
-         <h4>Multilingual capacity</h4>
-         <p>Chinese, Kazakh, Uyghur; basic English, ongoing Russian study. Ready for on‑site Central‑Asia business communication.</p ></div>
-       <div class="adv-card"><div class="em">🤝</div>
-         <h4>Cross‑cultural bridge talent</h4>
-         <p>Environmental‑law expertise plus multilingualism connects Chinese headquarters with host‑country stakeholders, highly valued for Belt‑and‑Road green‑investment projects.</p ></div>
-     </div>
-   </div>
- </section>
- <!-- ========== Target Positions across three countries ========== -->
- <section id="jobs">
-   <div class="wrap">
-     <div class="sec-head">
-       <div class="sec-kicker">Part 02 · Target Positions</div>
-       <h2>Target Positions in Three Countries</h2>
-       <p>Start from China, targeting Kazakhstan and Kyrgyzstan to build a complete Central‑Asia legal‑compliance career path.</p >
-     </div>
-     <div class="jobs">
-       <div class="job">
-         <div class="job-flag jf-cn">
-           <div class="country">🇨🇳 CHINA</div>
-           <h3>Overseas Environmental‑Compliance Specialist<br>(Central‑Asia / Belt‑Road projects)</h3>
+ <!-- 个人头像 ✅ 文件名 226.jpeg -->
+ <div style="text-align:center; margin:35px 0;">
+     < img src="226.jpeg" alt="Gulsaira Profile Photo" style="width:210px;height:210px;border-radius:50%;object-fit:cover;">
+ </div>
+ <h1>Gülsaira</h1>
+ <p style="text-align:center; font-size:18px; color:#555;">
+     Central‑Asia Belt‑and‑Road Environmental Law & Compliance Specialist
+ </p >
+ <p style="text-align:center;">
+     Dual Background: Mechanical Engineering Bachelor | Environmental Law Master Student
+ </p >
+ <!-- 课堂汇报演讲稿 -->
+ <details>
+     <summary><strong>Presenter Notes (Presentation Script)</strong></summary>
+     <p>Hello everyone. I am Gülsaira. I am from Xinjiang, China. I finished my bachelor degree in Mechanical Design and Manufacturing Automation. Now I am studying Environmental Law at the postgraduate level.</p >
+     <p>My career goal is to become a legal and compliance specialist focusing on China–Central Asia Belt and Road projects. I speak Chinese and Kazakh fluently, while my English and Russian need systematic improvement.</p >
+     <p>In this portfolio, I show my personal resume, three target legal positions, skill score comparison with progress bar, my most preferred career choice, my current gaps, detailed study plan and long‑term improvement plan.</p >
+     <p>Thank you for watching.</p >
+ </details>
+ <!-- 第一大硬性板块：完整个人简历 -->
+ <h2>📄 Personal Resume</h2>
+ <h3>Basic Information</h3>
+ <p><strong>Name:</strong> Gülsaira</p >
+ <p><strong>Career Direction:</strong> Central Asia Environmental Law, Project Compliance, Belt and Road Legal Work</p >
+ <h3>Education Background</h3>
+ <ul>
+     <li><strong>Bachelor Degree:</strong> Mechanical Design and Manufacturing Automation. Gained engineering logic, technical document reading ability, and participated in machinery design competitions.</li>
+     <li><strong>Master Degree (Ongoing):</strong> Environmental Law. Newly started legal academic training, focusing on environmental regulation, energy law, and cross‑border project compliance in Central Asia.</li>
+ </ul>
+ <h3>My Personal Fixed Language Ability Score (Permanent Level)</h3>
+ <p><em>This is my real personal ability, will never decrease.</em></p >
+ <ul>
+     <li><strong>Chinese: 85 / 100</strong> — Native fluent, fully capable of legal writing and official work</li>
+     <li><strong>Kazakh: 80 / 100</strong> — Fluent communication, suitable for Central Asia local negotiation</li>
+     <li><strong>English: 20 / 100</strong> — Basic weak level, only simple vocabulary</li>
+     <li><strong>Russian: 5 / 100</strong> — Almost zero foundation, need full systematic learning</li>
+ </ul>
+ <h3>Professional Advantages</h3>
+ <ul>
+  <li>Unique interdisciplinary background: engineering + environmental law</li>
+     <li>Bilingual advantage in Chinese and Kazakh for China–Central Asia cooperation</li>
+     <li>Clear career positioning focusing on Central Asia legal compliance field</li>
+ </ul>
+ <h3>Current Shortcomings</h3>
+ <ul>
+     <li>Environmental law knowledge foundation is newly established</li>
+     <li>No legal compliance internship experience</li>
+     <li>No legal professional qualification certificate</li>
+     <li>English and Russian cannot support professional legal work currently</li>
+ </ul>
+ <!-- ✅【方案1 进度条卡片打分板块】 -->
+ <h2>🎯 Job Requirement & Skill Matching Dashboard</h2>
+ <p style="text-align:center;">Progress bar: Job required score (Blue) / My current score (Green)</p >
+ <div class="card-container">
+     <!-- Position A -->
+     <div class="job-card">
+         <h4>Position A: China-based Overseas Environmental Compliance Specialist</h4>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Chinese (Require:80 / Me:85)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:80%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:85%;background:#27ae60;margin-top:-10px;"></div>
+             </div>
          </div>
-         <div class="job-body">
-           <p>Legal & compliance role for Chinese enterprises doing business in Central Asia; work at China headquarters before potential secondment overseas.</p >
-           <div class="lbl">Highlights</div>
-           <ul>
-             <li>Coordinate Chinese headquarters with foreign governments & counterparties</li>
-             <li>Mechanical background supports review of equipment & engineering contracts</li>
-             <li>Main working languages: Chinese and Kazakh; moderate‑level English acceptable</li>
-           </ul>
-           <div class="lbl">Alternative paths</div>
-           <ul>
-             <li>Central‑Asia‑focused law firms (requires Chinese legal‑qualification exam pass)</li>
-             <li>Civil‑service or public‑institution roles in commerce & customs‑related fields</li>
-           </ul>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Kazakh (Require:70 / Me:80)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:70%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:80%;background:#27ae60;margin-top:-10px;"></div>
+             </div>
          </div>
-         <div class="job-foot">💬 Working languages: Mainly Chinese + Kazakh</div>
-       </div>
-       <div class="job">
-         <div class="job-flag jf-kz">
-           <div class="country">🇰🇿 KAZAKHSTAN</div>
-           <h3>Project Legal Specialist<br>(Environmental & Compliance)</h3>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>English (Require:50 / Me:20)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:50%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:20%;background:#27ae60;margin-top:-10px;"></div>
+             </div>
          </div>
-         <div class="job-body">
-           <p>On‑site legal, compliance and contract‑management for Chinese‑funded energy, infrastructure and equipment‑trade projects in Kazakhstan.</p >
-           <div class="lbl">Highlights</div>
-           <ul>
-             <li>Russian widely used for local legal documents & business communication</li>
-             <li>Combination of technical knowledge plus languages is highly sought‑after locally</li>
-             <li>Mechanical‑law profile brings strong value for engineering‑contract work</li>
-           </ul>
-           <div class="lbl">Alternative paths</div>
-           <ul>
-             <li>On‑site contract‑management roles via Chinese‑company secondment</li>
-             <li>Legal support for China‑Kazakhstan trade‑investment initiatives</li>
-           </ul>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Russian (Require:30 / Me:5)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:30%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:5%;background:#27ae60;margin-top:-10px;"></div>
+             </div>
          </div>
-         <div class="job-foot">💬 Working languages: Kazakh + Russian</div>
-       </div>
-       <div class="job">
-         <div class="job-flag jf-kg">
-           <div class="country">🇰🇬 KYRGYZSTAN</div>
-           <h3>Mining / Energy Project<br>Environmental‑Compliance Specialist</h3>
-         </div>
-         <div class="job-body">
-           <p>Expat legal‑compliance & contract roles for Chinese‑funded mining‑energy projects in Kyrgyzstan, matching my environmental‑law specialization.</p >
-           <div class="lbl">Highlights</div>
-           <ul>
-             <li>Mining‑energy sector hosts large‑scale Chinese‑funded investments</li>
-             <li>Environmental compliance aligns with Belt‑and‑Road green‑development priorities</li>
-             <li>Sustained market demand for project‑focused legal‑compliance staff</li>
-           </ul>
-           <div class="lbl">Alternative paths</div>
-           <ul>
-             <li>Legal support for China‑Kyrgyzstan engineering‑construction projects</li>
-             <li>Contract‑management covering intellectual‑property‑related work</li>
-           </ul>
-         </div>
-         <div class="job-foot">💬 Working languages: Russian + Chinese</div>
-       </div>
      </div>
-   </div>
- </section>
- <!-- ========== Gap‑analysis & Development Roadmap ========== -->
- <section id="roadmap" style="background:#f2ede1;">
-   <div class="wrap">
-     <div class="sec-head">
-       <div class="sec-kicker">Roadmap</div>
-       <h2>Development Roadmap during Postgraduate Study</h2>
-       <p>I am pursuing a one‑year master’s degree in environmental law. Current situation: basic‑level English; limited practical‑legal experience; have not yet passed the Chinese legal‑qualification examination; no internship records. I will use this study period to fill gaps and prepare for job‑hunting upon graduation.</p >
+     <!-- Position B -->
+     <div class="job-card">
+         <h4>Position B: Kazakhstan Local Project Legal Specialist</h4>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Chinese (Require:50 / Me:85)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:50%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:85%;background:#e74c3c;margin-top:-10px;"></div>
+             </div>
+         </div>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Kazakh (Require:85 / Me:80)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:85%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:80%;background:#e74c3c;margin-top:-10px;"></div>
+             </div>
+         </div>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>English (Require:55 / Me:20)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:55%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:20%;background:#e74c3c;margin-top:-10px;"></div>
+             </div>
+         </div>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Russian (Require:80 / Me:5)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:80%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:5%;background:#e74c3c;margin-top:-10px;"></div>
+                 </div>
+         </div>
      </div>
-     <div class="roadmap">
-       <div class="step"><div class="num">1</div>
-         <h4>Pass the legal‑qualification examination</h4>
-         <p>Obtain Chinese legal‑professional qualification, which is a basic threshold for most lawyer and in‑house‑legal positions.</p >
-         <span class="dur">Key target within one‑year study</span></div>
-       <div class="step"><div class="num">2</div>
-         <h4>Gain Central‑Asia‑relevant legal internship</h4>
-         <p>Build practical project experience to compensate for lack of prior internships.</p >
-         <span class="dur">Carry out concurrently</span></div>
-       <div class="step"><div class="num">3</div>
-         <h4>Build Russian foundational skills</h4>
-         <p>Russian is heavily used in legal and business documents in Kazakhstan and Kyrgyzstan; limited Russian creates notable career constraints.</p >
-         <span class="dur">1 hour daily · 1‑2‑year horizon</span></div>
-       <div class="step"><div class="num">4</div>
-         <h4>Improve English to B1+ level</h4>
-         <p>From current basic level to B1 in roughly 1‑1.5‑years of consistent practice; further progress toward B2 over 2‑3‑years. Translation tools can assist day‑to‑day work.</p >
-         <span class="dur">1‑2 hours daily</span></div>
+     <!-- Position C -->
+     <div class="job-card">
+         <h4>Position C: Kyrgyzstan Mining Energy Compliance Specialist</h4>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Chinese (Require:50 / Me:85)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:50%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:85%;background:#9b59b6;margin-top:-10px;"></div>
+             </div>
+         </div>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Kazakh (Require:60 / Me:80)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:60%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:80%;background:#9b59b6;margin-top:-10px;"></div>
+             </div>
+         </div>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>English (Require:55 / Me:20)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:55%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:20%;background:#9b59b6;margin-top:-10px;"></div>
+             </div>
+         </div>
+         <div class="progress-wrap">
+             <div class="progress-label"><span>Russian (Require:85 / Me:5)</span></div>
+             <div class="progress-bg">
+                 <div class="progress-bar" style="width:85%;background:#3498db;"></div>
+                 <div class="progress-bar" style="width:5%;background:#9b59b6;margin-top:-10px;"></div>
+             </div>
+         </div>
      </div>
-     <div class="note-box">
-       📌 <b>Job‑hunting strategy:</b> Upon or before graduation from the one‑year postgraduate program, prioritize applying for China‑headquartered roles serving Central‑Asia businesses.
-       Secure domestic employment first and pursue overseas secondment afterwards. This approach is more realistic than hunting for local jobs directly in Central‑Asia.
-       English expectation: Candidates should be able to understand documents and communicate; B1 or higher is preferred for Central‑Asia‑focused corporate‑legal positions.
-     </div>
-   </div>
- </section>
- <footer>
-   <div class="wrap">
-     <b>Gülsaira</b> · Xinjiang China · Bachelor in Mechanical Engineering · Postgraduate in Environmental Law · Central‑Asia Legal & Compliance Track<br>
-     Chinese · Kazakh · Uyghur · English (basic) | Russian in progress | 🎵 Hobbies: music & food
-   </div>
- </footer>
+ </div>
+ <h3>2. My Matching Situation with Each Position</h3>
+ <p><em>My Chinese & Kazakh ability is fixed and stable. Only English and Russian need improvement.</em></p >
+ <h4>Position A Matching Result (Best Match)</h4>
+ <ul>
+  <li>My Chinese 85 > Job requirement 80 — <strong>Fully qualified</strong></li>
+     <li>My Kazakh 80 > Job requirement 70 — <strong>Fully qualified</strong></li>
+     <li>English & Russian currently insufficient but low job requirement pressure</li>
+ </ul>
+ <h4>Position B Matching Result</h4>
+ <ul>
+     <li>Chinese advantage cannot be fully used</li>
+     <li>Russian requirement extremely high (80), my current level only 5 — huge gap</li>
+ </ul>
+ <h4>Position C Matching Result</h4>
+ <ul>
+     <li>Kazakh advantage cannot be fully used</li>
+     <li>Russian requirement highest (85), difficult for new graduates</li>
+ </ul>
+ <h3>3. My Most Satisfied & Final Chosen Position</h3>
+ <p><strong>Final Choice: Position A — China-based Overseas Environmental Compliance Specialist</strong></p >
+ <h4>Reasons for Choosing This Job</h4>
+ <ol>
+     <li><strong>Maximize my language advantages</strong>: My Chinese (85) and Kazakh (80) perfectly meet and exceed job requirements. These two languages are my long-term stable strengths.</li>
+     <li><strong>Low pressure at the early stage</strong>: This position does not require high Russian or English level for entry, which matches my current beginner foreign language situation.</li>
+     <li><strong>Matches my dual major background</strong>: Mechanical engineering knowledge can support engineering contract review, and environmental law knowledge matches compliance work.</li>
+     <li><strong>Safe and stable career starting point</strong>: Start in China headquarters first, accumulate experience, and go overseas later.</li>
+     <li><strong>Long-term development space</strong>: After improving Russian and English, I can apply for Central Asia overseas secondment in Kazakhstan or Kyrgyzstan.</li>
+     <li><strong>Good industry prospect</strong>: Belt‑and‑Road cooperation between China and Central Asia keeps developing, so the demand for environmental compliance specialists will keep growing in the next decade.</li>
+     <li><strong>Personal career mission</strong>: I hope to use my bilingual ability and cross‑disciplinary knowledge to solve legal and environmental problems for cross‑border investment projects in Central Asia.</li>
+ </ol>
+ <h3>4. All Current Gaps That I Need to Make Up</h3>
+ <ol>
+     <li>Insufficient systematic environmental law professional knowledge</li>
+     <li>No compliance internship experience on Belt and Road projects</li>
+     <li>No legal qualification certificate</li>
+     <li>English cannot read legal documents</li>
+     <li>Russian almost zero foundation, cannot adapt to future overseas work</li>
+ </ol>
+ <!-- 独立板块：完整学习计划 Study Plan -->
+ <h2>📚 Detailed Personal Study Plan</h2>
+ <h3>Phase 1: Master Study Period (Current ~ Before Graduation, about 12 months)</h3>
+ <h4>Professional Legal Courses Study</h4>
+ <ul>
+  <li>Complete all core courses of environmental law, international law, cross‑border investment law, energy and mineral law</li>
+     <li>Focus on Central Asia related legal research, sort out China‑Kazakhstan comparative legal materials</li>
+     <li>Finish thesis writing to consolidate academic foundation</li>
+ </ul>
+ <h4>English Learning Plan</h4>
+ <ul>
+     <li>Daily learning time: 1–1.5 hours every day</li>
+     <li>Target within 12 months: Reach CEFR B1 level, can understand simple legal documents and business emails</li>
+ </ul>
+ <h4>Russian Learning Plan</h4>
+ <ul>
+     <li>Daily learning time: 1 hour every day, start from alphabet and basic grammar</li>
+     <li>Target within 12 months: Reach basic working level (30–40 points), master daily communication and simple legal vocabulary</li>
+ </ul>
+ <h4>Certificate & Internship Plan</h4>
+ <ul>
+     <li>Prepare for legal professional qualification examination during spare time</li>
+     <li>Apply for internship in foreign‑related compliance department of enterprises with Central Asia business to accumulate practical work experience</li>
+ </ul>
+ <h3>Phase 2: 1–3 Years After Graduation (On‑the‑job Learning)</h3>
+ <ul>
+     <li>Continue to improve Russian, raise level to 70+ points, achieve independent business negotiation for Central Asia projects</li>
+     <li>Sum up practical compliance cases, master the whole process of cross‑border project environmental review</li>
+     <li>Grow from junior specialist to intermediate compliance staff</li>
+ </ul>
+ <h3>Phase 3: 3–5 Years Long‑term Learning Goal</h3>
+ <ul>
+     <li>Master professional Russian legal expression, independently handle Central Asia cross‑border compliance business</li>
+     <li>Become a mature environmental compliance professional for Belt‑and‑Road projects</li>
+ </ul>
+ <h3>5. My Complete Long‑term Career Development Route</h3>
+ <p><strong>Stage 1 (Master Period): Lay foundation</strong><br>
+ Fill academic gaps, language gaps, and internship gaps, complete basic ability building through systematic study.</p >
+ <p><strong>Stage 2 (Graduation–2 years): Domestic career settlement</strong><br>
+ Join China-headquartered Central Asia project compliance team, rely on Chinese and Kazakh advantages to be competent in daily work, continue to improve English and Russian.</p >
+ <p><strong>Stage 3 (3–5 years): Overseas development</strong><br>
+ Become a mature environmental compliance specialist, undertake independent project work, and develop into a professional legal compliance talent serving China–Central Asia Belt and Road cooperation.</p >
+ <!-- 发展路线总览 -->
+ <h2>🛤️ My Overall Development Roadmap</h2>
+ <p>My Chinese (85) and Kazakh (80) language abilities are my permanent core competitive advantages and will not decrease. My future study plan only focuses on improving English, Russian, legal academic ability and practical experience. Starting from domestic environmental compliance work, I will finally grow into a cross‑border legal compliance professional for Central Asia projects.</p >
+ <!-- 联系方式 -->
+ <h2>📞 Contact</h2>
+ <p>Email: your_email@example.com</p >
+ <p>LinkedIn: your_linkedin_link</p >
+ <p>WeChat: your_wechat_id</p >
  </body>
  </html>
