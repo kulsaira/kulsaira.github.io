@@ -86,6 +86,56 @@ h2.section-title{font-size:clamp(2rem,4vw,2.8rem);color:var(--gold2);margin:5px 
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.88rem}
 .footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .gold{color:var(--gold2)}
+  
+/* Three-position self-assessment */
+.assessment-section{margin-top:26px}
+.assessment-card{
+  background:linear-gradient(145deg,#142e50,#091b33);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:22px;
+}
+.assessment-card h3{color:var(--gold2);font-size:1.4rem}
+.assessment-card .subtitle{color:var(--muted);font-size:.88rem}
+.score-summary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:20px 0;
+}
+.score-box{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:rgba(255,255,255,.045);
+}
+.score-box strong{display:block;color:var(--gold2);font-size:1.8rem}
+.score-box span{color:var(--muted);font-size:.82rem}
+.score-table{width:100%;border-collapse:collapse;margin-top:18px}
+.score-table th,.score-table td{
+  padding:11px 9px;
+  text-align:left;
+  border-bottom:1px solid rgba(217,179,108,.2);
+  font-size:.88rem;
+}
+.score-table th{color:var(--gold2)}
+.score-table td{color:#e0e6ed}
+.score-table td:last-child{font-weight:bold;color:var(--gold2)}
+.score-track{height:9px;background:#263b56;border-radius:20px;overflow:hidden;margin-top:6px}
+.score-fill{height:100%;background:linear-gradient(90deg,#b58a48,#f0d6a1);border-radius:20px}
+.analysis-text{
+  margin-top:18px;padding:17px;
+  border-left:3px solid var(--gold);
+  background:rgba(255,255,255,.04);
+  border-radius:8px;
+  color:#dce3ec;
+}
+@media(max-width:650px){
+  .score-summary{grid-template-columns:1fr}
+  .score-table th,.score-table td{font-size:.76rem;padding:9px 5px}
+  .assessment-card{padding:16px;overflow-x:auto}
+}
 @media(max-width:850px){
  nav{gap:12px}nav a{font-size:.78rem}
  .hero-inner{grid-template-columns:190px 1fr;gap:25px}
@@ -223,26 +273,387 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
   </div>
  </div>
 </section>
+  <section id="analysis" style="background:#0a1d37;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
 
-<section style="background:#0a1d37;border-top:1px solid var(--line);border-bottom:1px solid var(--line)" id="analysis">
- <div class="wrap">
-  <div class="section-head"><div><div class="kicker">04 / Job Requirements & Gap Analysis</div><h2 class="section-title">What I Have · What I Need</h2></div><p class="section-intro">I compare my current profile with the general capabilities these career directions may require.</p></div>
-  <div class="analysis-grid">
-   <article class="panel">
-    <h3>My Current Strengths</h3>
-    <ul class="list"><li>Chinese and Kazakh communication skills.</li><li>Bachelor's-level technical education in mechanical design and automation.</li><li>Current academic training in environmental law.</li><li>Interest in cross-border projects and sustainable development.</li></ul>
-   </article>
-   <article class="panel">
-    <h3>My Main Development Gaps</h3>
-    <div class="gap-row"><label>Environmental law practice</label><div><strong class="gold">Needs development</strong><div class="note">Study case examples, permits and environmental impact assessment procedures.</div></div></div>
-    <div class="gap-row"><label>English</label><div><strong class="gold">Basic level</strong><div class="note">Practise legal vocabulary, reading, short writing and speaking every week.</div></div></div>
-    <div class="gap-row"><label>Russian</label><div><strong class="gold">Beginner level</strong><div class="note">Start with everyday communication, grammar and job-related vocabulary.</div></div></div>
-    <div class="gap-row"><label>Work experience</label><div><strong class="gold">Needs practical exposure</strong><div class="note">Apply for internships, volunteering and supervised project-support opportunities.</div></div></div>
-   </article>
-  </div>
- </div>
+<div class="wrap">
+
+<div class="section-head">
+
+<div>
+
+<div class="kicker">04 / Professional Competency Assessment</div>
+
+<h2 class="section-title">Job Requirements & Self-Assessment</h2>
+
+</div>
+
+<p class="section-intro">
+
+I evaluate my current professional and language abilities against the estimated requirements of three target positions.
+
+</p>
+
+</div>
+
+<div class="panel">
+
+<h3>Assessment Method</h3>
+
+<p>Each competency is scored from 0 to 100. Job requirements represent estimated professional expectations, while my scores represent my current self-assessment.</p>
+
+<p class="note">Matching score = average of each personal score divided by its job requirement, capped at 100%. Professional and language competencies are equally weighted. These are planning estimates, not official recruitment standards or language test results.</p>
+
+</div>
+
+<!-- POSITION 01 -->
+
+<div class="assessment-card">
+
+<div class="job-no">POSITION 01 · CHINA</div>
+
+<h3>Environmental Compliance Specialist for Central Asia Projects</h3>
+
+<p class="subtitle">Professional and language competency assessment</p>
+
+<div class="score-summary">
+
+<div class="score-box">
+
+<strong>64%</strong>
+
+<span>Overall Job Match</span>
+
+</div>
+
+<div class="score-box">
+
+<strong>60%</strong>
+
+<span>Professional Skills Match</span>
+
+</div>
+
+<div class="score-box">
+
+<strong>70%</strong>
+
+<span>Language Skills Match</span>
+
+</div>
+
+</div>
+
+<h3>Professional Skills</h3>
+
+<table class="score-table">
+
+<thead><tr><th>Competency</th><th>Required</th><th>My Score</th></tr></thead>
+
+<tbody>
+
+<tr><td>Environmental Law</td><td>75</td><td>45</td></tr>
+
+<tr><td>Engineering Knowledge</td><td>75</td><td>80</td></tr>
+
+<tr><td>Compliance Knowledge</td><td>70</td><td>35</td></tr>
+
+<tr><td>Legal Research</td><td>65</td><td>45</td></tr>
+
+<tr><td>Project Experience</td><td>60</td><td>10</td></tr>
+
+<tr><td>Cross-border Communication</td><td>65</td><td>55</td></tr>
+
+</tbody>
+
+</table>
+
+<h3 style="margin-top:25px">Language Requirements</h3>
+
+<table class="score-table">
+
+<thead><tr><th>Language</th><th>Required</th><th>My Score</th></tr></thead>
+
+<tbody>
+
+<tr><td>Chinese</td><td>80</td><td>85</td></tr>
+
+<tr><td>Kazakh</td><td>70</td><td>80</td></tr>
+
+<tr><td>English</td><td>50</td><td>20</td></tr>
+
+<tr><td>Russian</td><td>30</td><td>5</td></tr>
+
+</tbody>
+
+</table>
+
+<div class="analysis-text">
+
+<strong>Score Analysis</strong>
+
+<p>My Chinese and Kazakh abilities meet the estimated requirements. My engineering background is another important advantage. However, I need to improve my environmental compliance knowledge, practical experience and English communication. Russian is also useful for cross-border projects.</p>
+
+<p><strong>Development priority:</strong> Environmental regulations, compliance procedures, English and practical internships.</p>
+
+</div>
+
+</div>
+
+<!-- POSITION 02 -->
+
+<div class="assessment-card">
+
+<div class="job-no">POSITION 02 · KAZAKHSTAN</div>
+
+<h3>Environmental Law & Compliance Specialist</h3>
+
+<p class="subtitle">Professional and language competency assessment</p>
+
+<div class="score-summary">
+
+<div class="score-box">
+
+<strong>55%</strong>
+
+<span>Overall Job Match</span>
+
+</div>
+
+<div class="score-box">
+
+<strong>58%</strong>
+
+<span>Professional Skills Match</span>
+
+</div>
+
+<div class="score-box">
+
+<strong>50%</strong>
+
+<span>Language Skills Match</span>
+
+</div>
+
+</div>
+
+<h3>Professional Skills</h3>
+
+<table class="score-table">
+
+<thead><tr><th>Competency</th><th>Required</th><th>My Score</th></tr></thead>
+
+<tbody>
+
+<tr><td>Kazakhstan Law</td><td>80</td><td>40</td></tr>
+
+<tr><td>Project Compliance</td><td>80</td><td>35</td></tr>
+
+<tr><td>Engineering Knowledge</td><td>55</td><td>80</td></tr>
+
+<tr><td>Legal Drafting</td><td>75</td><td>45</td></tr>
+
+<tr><td>Project Experience</td><td>60</td><td>10</td></tr>
+
+<tr><td>Stakeholder Communication</td><td>75</td><td>30</td></tr>
+
+</tbody>
+
+</table>
+
+<h3 style="margin-top:25px">Language Requirements</h3>
+
+<table class="score-table">
+
+<thead><tr><th>Language</th><th>Required</th><th>My Score</th></tr></thead>
+
+<tbody>
+
+<tr><td>Chinese</td><td>50</td><td>85</td></tr>
+
+<tr><td>Kazakh</td><td>85</td><td>80</td></tr>
+
+<tr><td>English</td><td>55</td><td>20</td></tr>
+
+<tr><td>Russian</td><td>80</td><td>5</td></tr>
+
+</tbody>
+
+</table>
+
+<div class="analysis-text">
+
+<strong>Score Analysis</strong>
+
+<p>My legal studies in Kazakhstan and engineering education provide a useful foundation. My Chinese ability is also an advantage. However, I still need stronger knowledge of Kazakhstan's environmental legislation, practical legal experience and better Russian communication skills.</p>
+
+<p><strong>Development priority:</strong> Kazakhstan environmental law, legal document writing, Russian and local internship experience.</p>
+
+</div>
+
+</div>
+
+<!-- POSITION 03 -->
+
+<div class="assessment-card">
+
+<div class="job-no">POSITION 03 · KYRGYZSTAN</div>
+
+<h3>Energy & Mining Compliance Specialist</h3>
+
+<p class="subtitle">Professional and language competency assessment</p>
+
+<div class="score-summary">
+
+<div class="score-box">
+
+<strong>54%</strong>
+
+<span>Overall Job Match</span>
+
+</div>
+
+<div class="score-box">
+
+<strong>54%</strong>
+
+<span>Professional Skills Match</span>
+
+</div>
+
+<div class="score-box">
+
+<strong>55%</strong>
+
+<span>Language Skills Match</span>
+
+</div>
+
+</div>
+
+<h3>Professional Skills</h3>
+
+<table class="score-table">
+
+<thead><tr><th>Competency</th><th>Required</th><th>My Score</th></tr></thead>
+
+<tbody>
+
+<tr><td>Mining and Energy Law</td><td>85</td><td>35</td></tr>
+
+<tr><td>Environmental Assessment</td><td>80</td><td>35</td></tr>
+
+<tr><td>Engineering Knowledge</td><td>70</td><td>80</td></tr>
+
+<tr><td>Compliance Management</td><td>80</td><td>35</td></tr>
+
+<tr><td>Field Project Experience</td><td>75</td><td>10</td></tr>
+
+<tr><td>Cross-border Communication</td><td>70</td><td>40</td></tr>
+
+</tbody>
+
+</table>
+
+<h3 style="margin-top:25px">Language Requirements</h3>
+
+<table class="score-table">
+
+<thead><tr><th>Language</th><th>Required</th><th>My Score</th></tr></thead>
+
+<tbody>
+
+<tr><td>Chinese</td><td>50</td><td>85</td></tr>
+
+<tr><td>Kazakh</td><td>60</td><td>80</td></tr>
+
+<tr><td>English</td><td>55</td><td>20</td></tr>
+
+<tr><td>Russian</td><td>85</td><td>5</td></tr>
+
+</tbody>
+
+</table>
+
+<div class="analysis-text">
+
+<strong>Score Analysis</strong>
+
+<p>My mechanical engineering background gives me a good understanding of industrial processes. My environmental law studies can also support my future development. However, I lack specialized mining and energy law knowledge, field experience and Russian language skills.</p>
+
+<p><strong>Development priority:</strong> Mining and energy regulations, environmental assessment, Russian and practical project experience.</p>
+
+</div>
+
+</div>
+
+<!-- COMPARISON -->
+
+<div class="panel">
+
+<h3>Final Comparison of Three Positions</h3>
+
+<p>Based on my current self-assessment, Position 01 has the highest estimated matching score.</p>
+
+<div class="gap-row">
+
+<label>Position 01 · China</label>
+
+<div>
+
+<strong class="gold">64% · First Choice</strong>
+
+<div class="score-track"><div class="score-fill" style="width:64%"></div></div>
+
+</div>
+
+</div>
+
+<div class="gap-row">
+
+<label>Position 02 · Kazakhstan</label>
+
+<div>
+
+<strong class="gold">55%</strong>
+
+<div class="score-track"><div class="score-fill" style="width:55%"></div></div>
+
+</div>
+
+</div>
+
+<div class="gap-row">
+
+<label>Position 03 · Kyrgyzstan</label>
+
+<div>
+
+<strong class="gold">54%</strong>
+
+<div class="score-track"><div class="score-fill" style="width:54%"></div></div>
+
+</div>
+
+</div>
+
+<div class="analysis-text">
+
+<strong>My Conclusion</strong>
+
+<p>Position 01 is currently my preferred career direction because it makes better use of my Chinese language ability and engineering background. Position 02 is a possible medium-term option, while Position 03 is a longer-term regional career goal.</p>
+
+<p>My main priorities are to improve my English and Russian, develop practical legal skills and gain internship experience.</p>
+
+</div>
+
+</div>
+
+<p class="note">All scores are preliminary personal estimates for career planning. Actual job requirements depend on employers, professional responsibilities and local regulations. Language scores are not CEFR or official examination results.</p>
+
+</div>
+
 </section>
-
 <section id="choice">
  <div class="wrap">
   <div class="section-head"><div><div class="kicker">05 / My Final Choice</div><h2 class="section-title">The Position I Want Most</h2></div></div>
